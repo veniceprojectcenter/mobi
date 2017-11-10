@@ -1,0 +1,41 @@
+<div class="navbar" style="background-color: lightblue; padding: 0.3em;">
+  <md-button ng-click="toggleLeft()" class="md-fav md-icon-button md-primary md-button" style="background-color: white; color: lightblue;">
+    <i class="material-icons">reorder</i>
+  </md-button>
+  <span class="title" style="">CK-INPUTAPP</span>
+  <span ng-if="!ctl.user" class="sigin"><a href="#!/login">Sign in</a></span>
+  <!--span ng-if="!ctl.user" class="signup"><a href="#!/">Sign up</a></span--> 
+ </div>
+
+<div layout="column" style="" ng-cloak>
+
+  <section layout="row" flex>
+
+    <md-sidenav class="md-sidenav-left" md-component-id="left"
+                md-backdrop md-whiteframe="4">
+
+      <md-toolbar class="md-theme-indigo">
+        <h1 class="md-toolbar-tools">Menù</h1>
+      </md-toolbar>
+
+      <md-content layout-margin>
+      <ng-include src="'/views/fragments/user_profile.html'"> </ng-include>
+
+        <div class="link_container">
+          <md-button class="md-fab md-mini" aria-label="home" ng-click="";>
+           <md-icon md-font-set="material-icons">info</md-icon>
+           Info
+          </md-button>
+        </div>
+
+        <md-button ng-click="toggleLeft()" class="md-accent">
+          Close
+        </md-button>
+
+      </md-content>
+
+    </md-sidenav>
+  </section>
+</div>
+
+

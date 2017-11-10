@@ -1,0 +1,21 @@
+<md-content md-theme="" layout-padding>
+  <div>
+    <h2>Login with your account</h2>
+  </div>
+  <div>
+    <md-input-container>
+      <label>E-Mail</label>
+      <input type="email" ng-model="ctl.user_email">
+    </md-input-container>
+  </div>
+  <div>
+    <md-input-container>
+      <label>Password</label>
+      <input type="password" ng-model="ctl.user_pass" >
+    </md-input-container>
+  </div>
+  <section id="login_section" layout="row" layout-align="left center" layout-wrap>
+    <md-progress-circular md-mode="indeterminate" style="display: none;"></md-progress-circular>
+    <md-button ng-click="ctl.user_signin()" class="md-raised md-primary">Sign In</md-button>
+  </section>
+</md-content>

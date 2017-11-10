@@ -1,0 +1,24 @@
+<div> ciaooo </div>
+<script>
+  String.prototype.replaceAll = function(search, replacement) {
+      var target = this;
+      return target.split(search).join(replacement);
+  };
+  var fb_ckid = null;
+	var recorder = "nik894@gmail.com"; 
+
+	ponti = {};
+	ponti.lat = 0.0;
+	ponti.lng = 0.0;
+	var query_params = document.location.href.split('?')[1];
+	query_params = query_params.split('&');
+	query_params.forEach(function(e){
+		var array=e.split('=');
+		ponti[array[0].replaceAll('+',' ')]=array[1].replaceAll('+',' ');
+	});
+	
+  var ref = app.firebase.database().ref("/data/").push({});
+  var new_key = ref.key;
+  var new_ref = app.firebase.database().ref("/data/"+new_key).update(ponti);
+
+</script>

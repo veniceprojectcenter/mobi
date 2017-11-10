@@ -1,0 +1,15 @@
+/* VISUALIZZAZIONE POPUP */  
+  vm.onClick = function(event) {
+    vm.feature = event.feature;
+    vm.feature.title = event.feature.getProperty('title');
+    vm.feature.descr = event.feature.getProperty('descr');
+    vm.feature.type  = event.feature.getProperty('type');
+    console.log("Feature", vm.feature);
+    console.log("Tipo", event.feature.getProperty('type'));
+    
+    var iw = vm.map.infoWindows['infowindow'];
+    iw.setPosition(event.feature.getGeometry().get());
+    iw.setOptions({
+      pixelOffset: new google.maps.Size(0,-30),
+      maxWidth: 250
+});

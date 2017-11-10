@@ -1,0 +1,970 @@
+{
+  "crs" : {
+    "properties" : {
+      "name" : "urn:ogc:def:crs:OGC:1.3:CRS84"
+    },
+    "type" : "name"
+  },
+  "features" : [ {
+    "geometry" : {
+      "coordinates" : [ 12.319028, 45.431694 ],
+      "type" : "Point"
+    },
+    "properties" : {
+      "ckid" : "00b5b5c1-df2e-5c8e-a385-25f19ad78f73",
+      "type" : "Bell Tower Page Final"
+    },
+    "type" : "Feature"
+  }, {
+    "geometry" : {
+      "coordinates" : [ 12.326424, 45.430176 ],
+      "type" : "Point"
+    },
+    "properties" : {
+      "ckid" : "018f1355-af45-5c2f-800d-10959811abc8",
+      "type" : "Bell Tower Page Final"
+    },
+    "type" : "Feature"
+  }, {
+    "geometry" : {
+      "coordinates" : [ 12.324197, 45.43435 ],
+      "type" : "Point"
+    },
+    "properties" : {
+      "ckid" : "02d7ddd8-af55-6bf0-e905-3498d947b335",
+      "type" : "Bell Tower Page Final"
+    },
+    "type" : "Feature"
+  }, {
+    "geometry" : {
+      "coordinates" : [ 12.377698, 45.441703 ],
+      "type" : "Point"
+    },
+    "properties" : {
+      "ckid" : "036bce69-40b1-4e66-7878-6eb215eb6b2e",
+      "type" : "Bell Tower Page Final"
+    },
+    "type" : "Feature"
+  }, {
+    "geometry" : {
+      "coordinates" : [ 12.38117, 45.427351 ],
+      "type" : "Point"
+    },
+    "properties" : {
+      "ckid" : "053d23f8-8f8a-eda4-1166-bf5d84bcadf2",
+      "type" : "Bell Tower Page Final"
+    },
+    "type" : "Feature"
+  }, {
+    "geometry" : {
+      "coordinates" : [ 12.419881, 45.497427 ],
+      "type" : "Point"
+    },
+    "properties" : {
+      "ckid" : "080b3411-d27d-a299-6f1d-6fb8abac678d",
+      "type" : "Bell Tower Page Final"
+    },
+    "type" : "Feature"
+  }, {
+    "geometry" : {
+      "coordinates" : [ 12.339252, 45.433372 ],
+      "type" : "Point"
+    },
+    "properties" : {
+      "ckid" : "08edd2aa-0f5e-80ee-18a8-f5f73565924c",
+      "type" : "Bell Tower Page Final"
+    },
+    "type" : "Feature"
+  }, {
+    "geometry" : {
+      "coordinates" : [ 12.339484, 45.438949 ],
+      "type" : "Point"
+    },
+    "properties" : {
+      "ckid" : "095f5775-68b0-8659-d3e1-221bd968c8a6",
+      "type" : "Bell Tower Page Final"
+    },
+    "type" : "Feature"
+  }, {
+    "geometry" : {
+      "coordinates" : [ 12.301482, 45.265021 ],
+      "type" : "Point"
+    },
+    "properties" : {
+      "ckid" : "0a3ec355-ecf0-da92-5c15-16860a6a5f3c",
+      "type" : "Bell Tower Page Final"
+    },
+    "type" : "Feature"
+  }, {
+    "geometry" : {
+      "coordinates" : [ 12.344017, 45.42882 ],
+      "type" : "Point"
+    },
+    "properties" : {
+      "ckid" : "0ec3e798-4b6a-4f20-68cf-5eb61d238697",
+      "type" : "Bell Tower Page Final"
+    },
+    "type" : "Feature"
+  }, {
+    "geometry" : {
+      "coordinates" : [ 12.338727, 45.439536 ],
+      "type" : "Point"
+    },
+    "properties" : {
+      "ckid" : "0ec85868-2856-6b8b-9d7b-4de9c4902dd0",
+      "type" : "Bell Tower Page Final"
+    },
+    "type" : "Feature"
+  }, {
+    "geometry" : {
+      "coordinates" : [ 12.369271, 45.416534 ],
+      "type" : "Point"
+    },
+    "properties" : {
+      "ckid" : "179f0cab-2c4c-98dd-07cf-5e8908f58bc7",
+      "type" : "Bell Tower Page Final"
+    },
+    "type" : "Feature"
+  }, {
+    "geometry" : {
+      "coordinates" : [ 12.32469, 45.431305 ],
+      "type" : "Point"
+    },
+    "properties" : {
+      "ckid" : "1fa03c19-4868-a916-c7e0-1ccd645a7c6b",
+      "type" : "Bell Tower Page Final"
+    },
+    "type" : "Feature"
+  }, {
+    "geometry" : {
+      "coordinates" : [ 12.33937, 45.426345 ],
+      "type" : "Point"
+    },
+    "properties" : {
+      "ckid" : "2338e011-c4a3-5c9d-839b-420947774383",
+      "type" : "Bell Tower Page Final"
+    },
+    "type" : "Feature"
+  }, {
+    "geometry" : {
+      "coordinates" : [ 12.353281, 45.454693 ],
+      "type" : "Point"
+    },
+    "properties" : {
+      "ckid" : "260cbf99-32be-0d64-36bb-54258706f0c9",
+      "type" : "Bell Tower Page Final"
+    },
+    "type" : "Feature"
+  }, {
+    "geometry" : {
+      "coordinates" : [ 12.336308, 45.432295 ],
+      "type" : "Point"
+    },
+    "properties" : {
+      "ckid" : "27b53e3a-289b-2441-515f-37c06446e02c",
+      "type" : "Bell Tower Page Final"
+    },
+    "type" : "Feature"
+  }, {
+    "geometry" : {
+      "coordinates" : [ 12.316435, 45.316855 ],
+      "type" : "Point"
+    },
+    "properties" : {
+      "ckid" : "27d29c83-e6a3-8e8a-9ccd-81137552a5d0",
+      "type" : "Bell Tower Page Final"
+    },
+    "type" : "Feature"
+  }, {
+    "geometry" : {
+      "coordinates" : [ 12.33945, 45.442797 ],
+      "type" : "Point"
+    },
+    "properties" : {
+      "ckid" : "28f6a5df-4a74-2c1d-e300-be91b61a0504",
+      "type" : "Bell Tower Page Final"
+    },
+    "type" : "Feature"
+  }, {
+    "geometry" : {
+      "coordinates" : [ 12.359162, 45.433591 ],
+      "type" : "Point"
+    },
+    "properties" : {
+      "ckid" : "2ae3eb27-c382-007d-8dac-75997ac49dc0",
+      "type" : "Bell Tower Page Final"
+    },
+    "type" : "Feature"
+  }, {
+    "geometry" : {
+      "coordinates" : [ 12.329057, 45.442295 ],
+      "type" : "Point"
+    },
+    "properties" : {
+      "ckid" : "2ffdfb16-719a-6040-efb3-5aba189130ff",
+      "type" : "Bell Tower Page Final"
+    },
+    "type" : "Feature"
+  }, {
+    "geometry" : {
+      "coordinates" : [ 12.34356, 45.433811 ],
+      "type" : "Point"
+    },
+    "properties" : {
+      "ckid" : "31232bb6-917b-642b-71e0-d679e63c3470",
+      "type" : "Bell Tower Page Final"
+    },
+    "type" : "Feature"
+  }, {
+    "geometry" : {
+      "coordinates" : [ 12.332682, 45.435021 ],
+      "type" : "Point"
+    },
+    "properties" : {
+      "ckid" : "35588b13-f5a8-acc2-b5ae-e23ff9684df3",
+      "type" : "Bell Tower Page Final"
+    },
+    "type" : "Feature"
+  }, {
+    "geometry" : {
+      "coordinates" : [ 12.360443, 45.457948 ],
+      "type" : "Point"
+    },
+    "properties" : {
+      "ckid" : "36466175-a1ab-e6b2-7701-770c552d1394",
+      "type" : "Bell Tower Page Final"
+    },
+    "type" : "Feature"
+  }, {
+    "geometry" : {
+      "coordinates" : [ 12.336573, 45.436985 ],
+      "type" : "Point"
+    },
+    "properties" : {
+      "ckid" : "396e2e46-67bb-50bd-2dc0-cc398c12dbf1",
+      "type" : "Bell Tower Page Final"
+    },
+    "type" : "Feature"
+  }, {
+    "geometry" : {
+      "coordinates" : [ 12.348853, 45.457724 ],
+      "type" : "Point"
+    },
+    "properties" : {
+      "ckid" : "3a8fb7c1-a21c-e3a1-3602-9c3168be2381",
+      "type" : "Bell Tower Page Final"
+    },
+    "type" : "Feature"
+  }, {
+    "geometry" : {
+      "coordinates" : [ 12.333405, 45.436888 ],
+      "type" : "Point"
+    },
+    "properties" : {
+      "ckid" : "3bbdab8e-14b1-d836-ec1c-eb72429f510e",
+      "type" : "Bell Tower Page Final"
+    },
+    "type" : "Feature"
+  }, {
+    "geometry" : {
+      "coordinates" : [ 12.325099, 45.435072 ],
+      "type" : "Point"
+    },
+    "properties" : {
+      "ckid" : "3f6f8af9-8156-c48b-7e65-9b31707c466f",
+      "type" : "Bell Tower Page Final"
+    },
+    "type" : "Feature"
+  }, {
+    "geometry" : {
+      "coordinates" : [ 12.347256, 45.448472 ],
+      "type" : "Point"
+    },
+    "properties" : {
+      "ckid" : "3ff7f1cb-7331-cb5b-6a8f-77f00cad939d",
+      "type" : "Bell Tower Page Final"
+    },
+    "type" : "Feature"
+  }, {
+    "geometry" : {
+      "coordinates" : [ 12.323379, 45.430732 ],
+      "type" : "Point"
+    },
+    "properties" : {
+      "ckid" : "40d56e75-51b7-ae56-b266-0e5e426e213e",
+      "type" : "Bell Tower Page Final"
+    },
+    "type" : "Feature"
+  }, {
+    "geometry" : {
+      "coordinates" : [ 12.327531, 45.439659 ],
+      "type" : "Point"
+    },
+    "properties" : {
+      "ckid" : "42909ac9-9793-0553-a2d8-05dfbad1ace5",
+      "type" : "Bell Tower Page Final"
+    },
+    "type" : "Feature"
+  }, {
+    "geometry" : {
+      "coordinates" : [ 12.330653, 45.440576 ],
+      "type" : "Point"
+    },
+    "properties" : {
+      "ckid" : "47e7cf8a-3ea0-06b7-0732-980990defbaf",
+      "type" : "Bell Tower Page Final"
+    },
+    "type" : "Feature"
+  }, {
+    "geometry" : {
+      "coordinates" : [ 12.323256, 45.424767 ],
+      "type" : "Point"
+    },
+    "properties" : {
+      "ckid" : "4937b2de-6fc2-243f-62ed-aff5199145da",
+      "type" : "Bell Tower Page Final"
+    },
+    "type" : "Feature"
+  }, {
+    "geometry" : {
+      "coordinates" : [ 12.315872, 45.431714 ],
+      "type" : "Point"
+    },
+    "properties" : {
+      "ckid" : "498f685b-43f4-8292-c2be-ca6a9c7f77d9",
+      "type" : "Bell Tower Page Final"
+    },
+    "type" : "Feature"
+  }, {
+    "geometry" : {
+      "coordinates" : [ 12.406211, 45.483263 ],
+      "type" : "Point"
+    },
+    "properties" : {
+      "ckid" : "4ad407fa-af7c-00b9-a10a-68e9470e58ce",
+      "type" : "Bell Tower Page Final"
+    },
+    "type" : "Feature"
+  }, {
+    "geometry" : {
+      "coordinates" : [ 12.333278, 45.443167 ],
+      "type" : "Point"
+    },
+    "properties" : {
+      "ckid" : "50196f4d-b51d-c4e8-4c92-30a91c1b8080",
+      "type" : "Bell Tower Page Final"
+    },
+    "type" : "Feature"
+  }, {
+    "geometry" : {
+      "coordinates" : [ 12.326975, 45.429054 ],
+      "type" : "Point"
+    },
+    "properties" : {
+      "ckid" : "516a3990-b621-bc26-505b-6af2d66ad7cf",
+      "type" : "Bell Tower Page Final"
+    },
+    "type" : "Feature"
+  }, {
+    "geometry" : {
+      "coordinates" : [ 12.352535, 45.454553 ],
+      "type" : "Point"
+    },
+    "properties" : {
+      "ckid" : "520d13dd-0e43-fa72-115b-31bc772af050",
+      "type" : "Bell Tower Page Final"
+    },
+    "type" : "Feature"
+  }, {
+    "geometry" : {
+      "coordinates" : [ 12.325235, 45.43638 ],
+      "type" : "Point"
+    },
+    "properties" : {
+      "ckid" : "551ad443-f984-d218-677d-20aadaad777a",
+      "type" : "Bell Tower Page Final"
+    },
+    "type" : "Feature"
+  }, {
+    "geometry" : {
+      "coordinates" : [ 12.338849, 45.436937 ],
+      "type" : "Point"
+    },
+    "properties" : {
+      "ckid" : "568a9afc-40da-5a41-eed0-0977d6b81c7b",
+      "type" : "Bell Tower Page Final"
+    },
+    "type" : "Feature"
+  }, {
+    "geometry" : {
+      "coordinates" : [ 12.410644, 45.458302 ],
+      "type" : "Point"
+    },
+    "properties" : {
+      "ckid" : "57fe4397-8071-99ec-0a1e-1c5de5a9ced7",
+      "type" : "Bell Tower Page Final"
+    },
+    "type" : "Feature"
+  }, {
+    "geometry" : {
+      "coordinates" : [ 12.412062, 45.488133 ],
+      "type" : "Point"
+    },
+    "properties" : {
+      "ckid" : "5ab0fb44-f210-fc34-4465-ce278870a546",
+      "type" : "Bell Tower Page Final"
+    },
+    "type" : "Feature"
+  }, {
+    "geometry" : {
+      "coordinates" : [ 12.326652, 45.436005 ],
+      "type" : "Point"
+    },
+    "properties" : {
+      "ckid" : "610cb83a-6f0b-3fc9-2590-bc1970aa81f7",
+      "type" : "Bell Tower Page Final"
+    },
+    "type" : "Feature"
+  }, {
+    "geometry" : {
+      "coordinates" : [ 12.328321, 45.432889 ],
+      "type" : "Point"
+    },
+    "properties" : {
+      "ckid" : "618bdef7-3eee-36dd-a71b-b65465857751",
+      "type" : "Bell Tower Page Final"
+    },
+    "type" : "Feature"
+  }, {
+    "geometry" : {
+      "coordinates" : [ 12.328863, 45.438841 ],
+      "type" : "Point"
+    },
+    "properties" : {
+      "ckid" : "636e3c01-9300-17d5-5478-0b18c63a4b10",
+      "type" : "Bell Tower Page Final"
+    },
+    "type" : "Feature"
+  }, {
+    "geometry" : {
+      "coordinates" : [ 12.325747, 45.442238 ],
+      "type" : "Point"
+    },
+    "properties" : {
+      "ckid" : "64a1d94d-c362-87b9-ea17-1feca10dedb4",
+      "type" : "Bell Tower Page Final"
+    },
+    "type" : "Feature"
+  }, {
+    "geometry" : {
+      "coordinates" : [ 12.332678, 45.446015 ],
+      "type" : "Point"
+    },
+    "properties" : {
+      "ckid" : "65e0dec3-ce29-a85b-9613-335cdf3bea95",
+      "type" : "Bell Tower Page Final"
+    },
+    "type" : "Feature"
+  }, {
+    "geometry" : {
+      "coordinates" : [ 12.334718, 45.438153 ],
+      "type" : "Point"
+    },
+    "properties" : {
+      "ckid" : "6906a770-65f8-33d1-30df-cccf8d446a6b",
+      "type" : "Bell Tower Page Final"
+    },
+    "type" : "Feature"
+  }, {
+    "geometry" : {
+      "coordinates" : [ 12.336796, 45.442689 ],
+      "type" : "Point"
+    },
+    "properties" : {
+      "ckid" : "70b6cbe9-c6fb-bec1-f69e-f3abac60413d",
+      "type" : "Bell Tower Page Final"
+    },
+    "type" : "Feature"
+  }, {
+    "geometry" : {
+      "coordinates" : [ 12.320007, 45.431305 ],
+      "type" : "Point"
+    },
+    "properties" : {
+      "ckid" : "715edc2f-1628-9a03-a59e-6f4dfde93236",
+      "type" : "Bell Tower Page Final"
+    },
+    "type" : "Feature"
+  }, {
+    "geometry" : {
+      "coordinates" : [ 12.317355, 45.434454 ],
+      "type" : "Point"
+    },
+    "properties" : {
+      "ckid" : "73c6d0a0-d86f-3399-0a86-cd525c4ee60f",
+      "type" : "Bell Tower Page Final"
+    },
+    "type" : "Feature"
+  }, {
+    "geometry" : {
+      "coordinates" : [ 12.320756, 45.444338 ],
+      "type" : "Point"
+    },
+    "properties" : {
+      "ckid" : "75f1fcb4-8388-550e-9ff5-8f5a82738c14",
+      "type" : "Bell Tower Page Final"
+    },
+    "type" : "Feature"
+  }, {
+    "geometry" : {
+      "coordinates" : [ 12.34913, 45.433776 ],
+      "type" : "Point"
+    },
+    "properties" : {
+      "ckid" : "7886b69d-a2d4-62cd-6265-006cfbe0a26b",
+      "type" : "Bell Tower Page Final"
+    },
+    "type" : "Feature"
+  }, {
+    "geometry" : {
+      "coordinates" : [ 12.332151, 45.432641 ],
+      "type" : "Point"
+    },
+    "properties" : {
+      "ckid" : "78fd34b0-b01f-1e22-7efd-e5af93d235a2",
+      "type" : "Bell Tower Page Final"
+    },
+    "type" : "Feature"
+  }, {
+    "geometry" : {
+      "coordinates" : [ 12.344739, 45.434636 ],
+      "type" : "Point"
+    },
+    "properties" : {
+      "ckid" : "7f88aa2f-5118-9884-5745-73bb72993096",
+      "type" : "Bell Tower Page Final"
+    },
+    "type" : "Feature"
+  }, {
+    "geometry" : {
+      "coordinates" : [ 12.328194, 45.440871 ],
+      "type" : "Point"
+    },
+    "properties" : {
+      "ckid" : "7fe9ea28-27fc-f8cb-5cae-b8acb24ff09f",
+      "type" : "Bell Tower Page Final"
+    },
+    "type" : "Feature"
+  }, {
+    "geometry" : {
+      "coordinates" : [ 12.343137, 45.440508 ],
+      "type" : "Point"
+    },
+    "properties" : {
+      "ckid" : "80f050b9-e83e-2d7b-4ec3-2620699e809e",
+      "type" : "Bell Tower Page Final"
+    },
+    "type" : "Feature"
+  }, {
+    "geometry" : {
+      "coordinates" : [ 12.338521, 45.436338 ],
+      "type" : "Point"
+    },
+    "properties" : {
+      "ckid" : "84a56ffa-c825-3c69-e8e0-49b96a8476a4",
+      "type" : "Bell Tower Page Final"
+    },
+    "type" : "Feature"
+  }, {
+    "geometry" : {
+      "coordinates" : [ 12.316192, 45.437654 ],
+      "type" : "Point"
+    },
+    "properties" : {
+      "ckid" : "88433b4f-0766-2cb5-49fb-6afcfa610114",
+      "type" : "Bell Tower Page Final"
+    },
+    "type" : "Feature"
+  }, {
+    "geometry" : {
+      "coordinates" : [ 12.346553, 45.434976 ],
+      "type" : "Point"
+    },
+    "properties" : {
+      "ckid" : "8e4b16bf-a8d7-ea7e-d6e3-92f6b53cc997",
+      "type" : "Bell Tower Page Final"
+    },
+    "type" : "Feature"
+  }, {
+    "geometry" : {
+      "coordinates" : [ 12.335111, 45.440334 ],
+      "type" : "Point"
+    },
+    "properties" : {
+      "ckid" : "8f8535a7-3881-58be-60fe-d2e5e89a2075",
+      "type" : "Bell Tower Page Final"
+    },
+    "type" : "Feature"
+  }, {
+    "geometry" : {
+      "coordinates" : [ 12.330481, 45.439265 ],
+      "type" : "Point"
+    },
+    "properties" : {
+      "ckid" : "8f9d19af-7ad6-cc26-b896-eee8c76aabd4",
+      "type" : "Bell Tower Page Final"
+    },
+    "type" : "Feature"
+  }, {
+    "geometry" : {
+      "coordinates" : [ 12.338552, 45.371875 ],
+      "type" : "Point"
+    },
+    "properties" : {
+      "ckid" : "97df987d-6901-df7d-1bcc-7c4045bcaf0b",
+      "type" : "Bell Tower Page Final"
+    },
+    "type" : "Feature"
+  }, {
+    "geometry" : {
+      "coordinates" : [ 12.348848, 45.437519 ],
+      "type" : "Point"
+    },
+    "properties" : {
+      "ckid" : "9aa33667-b76f-fd38-1276-d46b63f784f5",
+      "type" : "Bell Tower Page Final"
+    },
+    "type" : "Feature"
+  }, {
+    "geometry" : {
+      "coordinates" : [ 12.333505, 45.441215 ],
+      "type" : "Point"
+    },
+    "properties" : {
+      "ckid" : "9c420651-fa51-e1bf-a3ac-2503854a7b75",
+      "type" : "Bell Tower Page Final"
+    },
+    "type" : "Feature"
+  }, {
+    "geometry" : {
+      "coordinates" : [ 12.354502, 45.431866 ],
+      "type" : "Point"
+    },
+    "properties" : {
+      "ckid" : "9cc6184f-6a9e-ffa1-9b16-8565e03bf86e",
+      "type" : "Bell Tower Page Final"
+    },
+    "type" : "Feature"
+  }, {
+    "geometry" : {
+      "coordinates" : [ 12.322731, 45.439488 ],
+      "type" : "Point"
+    },
+    "properties" : {
+      "ckid" : "9f34da0c-5eb4-8485-f8c1-f5afafcbf7c3",
+      "type" : "Bell Tower Page Final"
+    },
+    "type" : "Feature"
+  }, {
+    "geometry" : {
+      "coordinates" : [ 12.3389, 45.435239 ],
+      "type" : "Point"
+    },
+    "properties" : {
+      "ckid" : "a25aea15-c394-7db7-6320-4a38860b59a8",
+      "type" : "Bell Tower Page Final"
+    },
+    "type" : "Feature"
+  }, {
+    "geometry" : {
+      "coordinates" : [ 12.340979, 45.436505 ],
+      "type" : "Point"
+    },
+    "properties" : {
+      "ckid" : "a69769a1-5047-73a0-ee67-10aa84947ec1",
+      "type" : "Bell Tower Page Final"
+    },
+    "type" : "Feature"
+  }, {
+    "geometry" : {
+      "coordinates" : [ 12.329563, 45.446796 ],
+      "type" : "Point"
+    },
+    "properties" : {
+      "ckid" : "a8a03af4-3f54-8d74-91f2-858462cac628",
+      "type" : "Bell Tower Page Final"
+    },
+    "type" : "Feature"
+  }, {
+    "geometry" : {
+      "coordinates" : [ 12.322414, 45.432375 ],
+      "type" : "Point"
+    },
+    "properties" : {
+      "ckid" : "a8bb12a4-edbf-87bf-07aa-2555e04e5db7",
+      "type" : "Bell Tower Page Final"
+    },
+    "type" : "Feature"
+  }, {
+    "geometry" : {
+      "coordinates" : [ 12.332682, 45.424113 ],
+      "type" : "Point"
+    },
+    "properties" : {
+      "ckid" : "abdf208f-f1ee-a2f7-b442-647b2a7cbb83",
+      "type" : "Bell Tower Page Final"
+    },
+    "type" : "Feature"
+  }, {
+    "geometry" : {
+      "coordinates" : [ 12.329657, 45.436283 ],
+      "type" : "Point"
+    },
+    "properties" : {
+      "ckid" : "aff559d9-e209-03d4-4eae-c6ec2faac3fa",
+      "type" : "Bell Tower Page Final"
+    },
+    "type" : "Feature"
+  }, {
+    "geometry" : {
+      "coordinates" : [ 12.337934, 45.434902 ],
+      "type" : "Point"
+    },
+    "properties" : {
+      "ckid" : "b49a991a-5c31-c73b-f0f1-60affe8ae70e",
+      "type" : "Bell Tower Page Final"
+    },
+    "type" : "Feature"
+  }, {
+    "geometry" : {
+      "coordinates" : [ 12.332613, 45.439153 ],
+      "type" : "Point"
+    },
+    "properties" : {
+      "ckid" : "bb1ae50e-3ba3-97fd-20f9-677d1527e414",
+      "type" : "Bell Tower Page Final"
+    },
+    "type" : "Feature"
+  }, {
+    "geometry" : {
+      "coordinates" : [ 12.3163, 45.432436 ],
+      "type" : "Point"
+    },
+    "properties" : {
+      "ckid" : "bd228427-bd7a-0951-afea-117e84eebfbc",
+      "type" : "Bell Tower Page Final"
+    },
+    "type" : "Feature"
+  }, {
+    "geometry" : {
+      "coordinates" : [ 12.326325, 45.437553 ],
+      "type" : "Point"
+    },
+    "properties" : {
+      "ckid" : "be1f53f1-4a27-3760-fccf-9230692c0d5d",
+      "type" : "Bell Tower Page Final"
+    },
+    "type" : "Feature"
+  }, {
+    "geometry" : {
+      "coordinates" : [ 12.357881, 45.429946 ],
+      "type" : "Point"
+    },
+    "properties" : {
+      "ckid" : "bf9519a7-bc3f-a149-b26f-7cb01c02889b",
+      "type" : "Bell Tower Page Final"
+    },
+    "type" : "Feature"
+  }, {
+    "geometry" : {
+      "coordinates" : [ 12.33264, 45.442286 ],
+      "type" : "Point"
+    },
+    "properties" : {
+      "ckid" : "bfe14cfc-8f93-2980-a196-3a0b1c6e77d7",
+      "type" : "Bell Tower Page Final"
+    },
+    "type" : "Feature"
+  }, {
+    "geometry" : {
+      "coordinates" : [ 12.357145, 45.456576 ],
+      "type" : "Point"
+    },
+    "properties" : {
+      "ckid" : "c5f3a207-26b8-d611-9664-a4b1646c1c7a",
+      "type" : "Bell Tower Page Final"
+    },
+    "type" : "Feature"
+  }, {
+    "geometry" : {
+      "coordinates" : [ 12.325862, 45.432597 ],
+      "type" : "Point"
+    },
+    "properties" : {
+      "ckid" : "cbc23dfd-27e8-0eca-860a-301e36b29417",
+      "type" : "Bell Tower Page Final"
+    },
+    "type" : "Feature"
+  }, {
+    "geometry" : {
+      "coordinates" : [ 12.322443, 45.436975 ],
+      "type" : "Point"
+    },
+    "properties" : {
+      "ckid" : "d2c288b4-cec1-7aa6-bd7f-d66b0557afdb",
+      "type" : "Bell Tower Page Final"
+    },
+    "type" : "Feature"
+  }, {
+    "geometry" : {
+      "coordinates" : [ 12.330852, 45.42451 ],
+      "type" : "Point"
+    },
+    "properties" : {
+      "ckid" : "d3e598f3-9b38-1f8e-53fc-4b708e9b52bb",
+      "type" : "Bell Tower Page Final"
+    },
+    "type" : "Feature"
+  }, {
+    "geometry" : {
+      "coordinates" : [ 12.302909, 45.282036 ],
+      "type" : "Point"
+    },
+    "properties" : {
+      "ckid" : "d508e1f4-6b77-b6b8-97a8-146dd95ead3e",
+      "type" : "Bell Tower Page Final"
+    },
+    "type" : "Feature"
+  }, {
+    "geometry" : {
+      "coordinates" : [ 12.329753, 45.431627 ],
+      "type" : "Point"
+    },
+    "properties" : {
+      "ckid" : "db22cd7c-13dd-db74-862b-d7d3da7f8a3b",
+      "type" : "Bell Tower Page Final"
+    },
+    "type" : "Feature"
+  }, {
+    "geometry" : {
+      "coordinates" : [ 12.321998, 45.440978 ],
+      "type" : "Point"
+    },
+    "properties" : {
+      "ckid" : "de5d510d-eeee-ea41-1239-b10ce7e1823f",
+      "type" : "Bell Tower Page Final"
+    },
+    "type" : "Feature"
+  }, {
+    "geometry" : {
+      "coordinates" : [ 12.335362, 45.443424 ],
+      "type" : "Point"
+    },
+    "properties" : {
+      "ckid" : "e27f0884-7fbb-a746-a6db-57695b67e4f8",
+      "type" : "Bell Tower Page Final"
+    },
+    "type" : "Feature"
+  }, {
+    "geometry" : {
+      "coordinates" : [ 12.327634, 45.428898 ],
+      "type" : "Point"
+    },
+    "properties" : {
+      "ckid" : "e294aa41-518e-2eea-2dbf-18c03b4190f1",
+      "type" : "Bell Tower Page Final"
+    },
+    "type" : "Feature"
+  }, {
+    "geometry" : {
+      "coordinates" : [ 12.336737, 45.439752 ],
+      "type" : "Point"
+    },
+    "properties" : {
+      "ckid" : "e2ada8f1-be4c-dd46-21e6-e54eb5b5a7f5",
+      "type" : "Bell Tower Page Final"
+    },
+    "type" : "Feature"
+  }, {
+    "geometry" : {
+      "coordinates" : [ 12.334109, 45.435261 ],
+      "type" : "Point"
+    },
+    "properties" : {
+      "ckid" : "e7205e09-fdda-655a-ebe2-e438de631d90",
+      "type" : "Bell Tower Page Final"
+    },
+    "type" : "Feature"
+  }, {
+    "geometry" : {
+      "coordinates" : [ 12.365999, 45.426656 ],
+      "type" : "Point"
+    },
+    "properties" : {
+      "ckid" : "ee86f164-ae3e-5bbc-9721-1395277efe0c",
+      "type" : "Bell Tower Page Final"
+    },
+    "type" : "Feature"
+  }, {
+    "geometry" : {
+      "coordinates" : [ 12.324529, 45.440108 ],
+      "type" : "Point"
+    },
+    "properties" : {
+      "ckid" : "f77cf75d-6f19-5d1a-5916-01e90f6ed07d",
+      "type" : "Bell Tower Page Final"
+    },
+    "type" : "Feature"
+  }, {
+    "geometry" : {
+      "coordinates" : [ 12.332519, 45.437382 ],
+      "type" : "Point"
+    },
+    "properties" : {
+      "ckid" : "f943bfe3-f2fb-3617-cb1e-a4712bd266d4",
+      "type" : "Bell Tower Page Final"
+    },
+    "type" : "Feature"
+  }, {
+    "geometry" : {
+      "coordinates" : [ 12.418712, 45.483366 ],
+      "type" : "Point"
+    },
+    "properties" : {
+      "ckid" : "fb3e6389-1961-91d2-b3eb-3bd233cc85ef",
+      "type" : "Bell Tower Page Final"
+    },
+    "type" : "Feature"
+  }, {
+    "geometry" : {
+      "coordinates" : [ 12.337351, 45.438566 ],
+      "type" : "Point"
+    },
+    "properties" : {
+      "ckid" : "fcc5c9fe-5c2d-9cbe-7cf1-94d206d540d2",
+      "type" : "Bell Tower Page Final"
+    },
+    "type" : "Feature"
+  }, {
+    "geometry" : {
+      "coordinates" : [ 12.336898, 45.435747 ],
+      "type" : "Point"
+    },
+    "properties" : {
+      "ckid" : "ff769515-9310-f600-f828-77329d1c3f82",
+      "type" : "Bell Tower Page Final"
+    },
+    "type" : "Feature"
+  }, {
+    "geometry" : {
+      "coordinates" : [ 12.334844, 45.429705 ],
+      "type" : "Point"
+    },
+    "properties" : {
+      "ckid" : "ffd14c14-6922-0f75-25ba-57af8473d1cf",
+      "type" : "Bell Tower Page Final"
+    },
+    "type" : "Feature"
+  } ],
+  "type" : "FeatureCollection"
+}

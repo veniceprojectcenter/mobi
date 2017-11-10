@@ -1,0 +1,83 @@
+<div id="tabs">
+  <ul>
+    <li ng-repeat="tab in ctl.det_view.tabs track by $index">
+      <a href="#tabs-{{$index}}">TAB {{$index}}</a>
+    </li>
+  </ul>
+  <div class="scrollable">
+    <div
+      ng-repeat="tab in ctl.det_view.tabs track by $index"
+      id="tabs-{{$index}}"
+      class="detail_tab col s12"
+      ng-switch on="$index"
+    >
+      <!-- ALTRI TAB -->
+      <form id="new_element">
+      <div
+        ng-switch-default
+        ng-repeat="element in tab.elements"
+        class="input-field col s6"
+        ng-switch on="element.input_type"">
+        <label class="active" for="field_{{element.key}}">{{element.key}}</label>
+        <select
+          ng-switch-when="select"
+          name="field_{{element.key}}"
+          ng-model="ctl.dati[element.key]"
+          >
+          <option value="--">Non definito</option>
+          <option
+            ng-repeat="option in element.options"
+            zng-selected="option == vm.feature.data[element.key]">
+            {{option}}
+          </option>
+        </select>
+        <!-- You can then use the directive as follows: -->
+        <input type="file" ng-model="ctl.dati[element.key]" ng-switch-when="file"
+          name="field_{{element.key}}"
+          type="{{element.input_type || 'file'}}"
+          multiple
+          file-select="data" 
+          file-loaded="myLoaded()"
+          file-error="myError($error)" 
+          file-progress="myProgress($total,$loaded)">
+        <input
+          ng-switch-default
+          placeholder="Non definito"
+          name="field_{{element.key}}"
+          type="{{element.input_type || 'text'}}"
+          zng-disabled="element.input_disabled"
+          class="validate"
+          ng-model="ctl.dati[element.key]"
+          value="{{ctl.current_pos[element.key]}}">
+      </div>
+      <input type="submit" ng-click="ctl.create()" />
+      </form>
+    </div>
+  </div>
+</div>
+
+<style type="text/css">
+  .scrollable{
+    overflow-y: auto;
+  }
+  .ui-tabs{
+    background-color: white;
+  }
+  #tabs{
+    background-color: white;
+  }
+  .input-field.col.s6 {
+    padding: 1em 0;
+  }
+  input{
+    display: block;
+    width: 100%;
+  }
+  label{
+    display: block;
+    margin-bottom: 5px;
+  }
+
+</style>
+
+  

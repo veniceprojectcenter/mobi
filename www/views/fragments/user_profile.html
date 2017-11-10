@@ -1,0 +1,38 @@
+<style>
+.circle{
+  width:80px; 
+  height:80px; 
+  border-radius: 50%; 
+  border-width: 1px; 
+  border-color: black;
+}
+.userPhoto{
+  width: 65px;
+  height: 65px;
+  margin: 0 auto;
+}
+
+</style>
+
+<div flex-xs flex-gt-xs="100" layout="column">
+      <md-card md-theme="'default'" md-theme-watch>
+        <md-card-title>
+          <md-card-title-text>
+            <!--span class="md-headline">username</span-->
+            <span class="md-subhead">{{ctl.user.email}}</span>
+          </md-card-title-text>
+          <md-card-title-media>
+            <div class="md-media-sm card-media">
+              <div class="circle">
+                <img  class="userPhoto" ng-if="ctl.user.photoURL" ng-src="{{ctl.user.photoURL}}"/>
+                <img class="userPhoto"  ng-if="!ctl.user.photoURL" ng-src="/images/user.svg"/>
+              </div>
+            </div>
+          </md-card-title-media>
+        </md-card-title>
+        <md-card-actions layout="row" layout-align="end center">
+          <md-button>Settings</md-button>
+          <md-button ng-click="ctl.user_logout()">Logout</md-button>
+        </md-card-actions>
+      </md-card>
+</div>
