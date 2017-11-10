@@ -1,15 +1,6 @@
 {
   "rules": {
     ".read": "auth != null",
-    ".write": "auth != null",
-    "_geodata": {
-      ".indexOn": "g"
-    },
-    "data": {
-      ".indexOn": "g"
-    },
-    "geojson": {
-      ".read": "true"
-    }
+    ".write": "auth != null"
   }
 }
