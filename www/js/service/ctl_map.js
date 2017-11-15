@@ -15,7 +15,7 @@ app.init_map = function(ctl, $firebaseArray, NgMap){
 
   ctl.read_geojson = function(group_names, $firebaseArray){
     for(group_name in group_names){ 
-      firebase.database().ref("/geojson/"+group_name)
+      ctl.mainfirebase.database().ref("/geojson/"+group_name)
       .once("value").then(function(snapshot){
         console.log("DATA: ",snapshot.val());
         ctl.geojson = snapshot.val();
@@ -28,7 +28,7 @@ app.init_map = function(ctl, $firebaseArray, NgMap){
   ctl.import_members = function(group_names){
     console.log("[import_members] group_names: ",group_names);
     for(var i=0; i < group_names.length ; i++){ 
-    var ref = firebase.database().ref("/groups/"+group_names[i]);
+    var ref = ctl.mainfirebase.database().ref("/groups/"+group_names[i]);
       console.log("GROUPNAME: ",group_names[i]);
       ref.on("value", function(snapshot) {
         console.log("orderByChild");
@@ -43,7 +43,7 @@ app.init_map = function(ctl, $firebaseArray, NgMap){
 
   ctl.import_markers = function(members){
     for(var i=0;i<members.length; i++){
-      var ref = firebase.database().ref("/data/"+members[i]);
+      var ref = ctl.mainfirebase.database().ref("/data/"+members[i]);
       ref.on("value",function(snapshot){
         ctl.markers.push(snapshot.val());
         ctl.apply();
