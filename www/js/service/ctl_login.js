@@ -1,7 +1,7 @@
 app.login = function(ctl, $scope, $location, $firebaseObject, $firebaseArray){
   
   app.check_login = function(){
-    ctl.user = firebase.auth().currentUser;
+    ctl.user = ctl.mainfirebase.auth().currentUser;
     //app.user = ctl.user;
     console.log("User", ctl.user);
     ctl.apply();
@@ -13,9 +13,9 @@ app.login = function(ctl, $scope, $location, $firebaseObject, $firebaseArray){
   ctl.user_signin = function(){
     $('#login_section button').hide();
     $('#login_section md-progress-circular').show();
-    firebase.auth().signInWithEmailAndPassword(ctl.user_email, ctl.user_pass)
+    ctl.mainfirebase.auth().signInWithEmailAndPassword(ctl.user_email, ctl.user_pass)
     .then(function(authData){
-      ctl.user = firebase.auth().currentUser;
+      ctl.user = ctl.mainfirebase.auth().currentUser;
       app.user = ctl.user;
       ctl.user_pass  = undefined;
       ctl.apply();
@@ -41,7 +41,7 @@ app.login = function(ctl, $scope, $location, $firebaseObject, $firebaseArray){
     console.log("Logout");
     ctl.user = undefined;
     app.user = undefined;
-    firebase.auth().signOut();
+    ctl.mainfirebase.auth().signOut();
     ctl.apply();
     $location.path( "/index" );
   };

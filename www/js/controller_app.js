@@ -6,12 +6,20 @@ angular.module('app').controller('MainCtrl',
   $interval
   ) {
   var ctl = this;
+  ctl.firebasecfg = {
+    apiKey: "AIzaSyBHXHjj5oldp863PFl4Fs5WzOe07JC5OWg",
+    authDomain: "cityknowledge30.firebaseapp.com",
+    databaseURL: "https://cityknowledge30.firebaseio.com",
+    projectId: "cityknowledge30",
+    storageBucket: "cityknowledge30.appspot.com",
+    messagingSenderId: "33704287925"
+  };
+  // Initialize another app with a different config
+  ctl.mainfirebase = firebase.initializeApp(ctl.firebasecfg, "main");
   app.$scope = $scope;
   // http://localhost:5000/?name=ponti
   app.controller_helpers(ctl);
   app.controller_config(ctl, $scope, $firebaseObject, $interval);
-  
-  // ctl.firebase = firebase;
   
   /*helper initialization*/
   app.app_helper(ctl);

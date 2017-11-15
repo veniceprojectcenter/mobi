@@ -26,14 +26,14 @@ app.controller_config = function(ctl, $scope, $firebaseObject, $interval){
   if (!ctl.input_app_name) ctl.input_app_name = prompt("Write your application name...");
   if (!ctl.input_app_name) alert("So, you should found it...");
  
-  firebase.database().ref(`inputapp/${ctl.input_app_name}`).once("value", function(snap){
+  ctl.mainfirebase.database().ref(`inputapp/${ctl.input_app_name}`).once("value", function(snap){
     ctl.config = snap.val();
     
     //scarico un data di quel gruppo
     if(debug){
-      firebase.database().ref(`/groups/${ctl.config.group_name}/member_list`).once("value",function(snap){
+      ctl.mainfirebase.database().ref(`/groups/${ctl.config.group_name}/member_list`).once("value",function(snap){
         var template_el=snap.val().split(",")[1];
-        firebase.database().ref(`/data/${template_el}/data`).once("value",function(snapshot){
+        ctl.mainfirebase.database().ref(`/data/${template_el}/data`).once("value",function(snapshot){
           var x=snapshot.val();
           var z=Object.keys(x);
           var input = []
@@ -43,7 +43,7 @@ app.controller_config = function(ctl, $scope, $firebaseObject, $interval){
             temp.key=z[i];
             input.push(temp);
           }
-          firebase.database().ref(`/views/${ctl.config.view_name}/tabs/0/elements/`).set(input);
+          ctl.mainfirebase.database().ref(`/views/${ctl.config.view_name}/tabs/0/elements/`).set(input);
         });
       });
     }
@@ -52,7 +52,7 @@ app.controller_config = function(ctl, $scope, $firebaseObject, $interval){
 
     // CARICO LA STRUTTURA DEL TAB
     ctl.tabs_obj = $firebaseObject(
-      firebase.database().ref(`/views/${ctl.config.view_name}`)
+      ctl.mainfirebase.database().ref(`/views/${ctl.config.view_name}`)
     );
     //ctl.det_view.tabs 
     ctl.tabs_obj.$bindTo($scope, "ctl.det_view");
@@ -63,7 +63,7 @@ app.controller_config = function(ctl, $scope, $firebaseObject, $interval){
     // CARICO IL GRUPPO
     console.log("pp", `/groups/${ctl.config.group_name}`);
     ctl.group_obj = $firebaseObject(
-      firebase.database().ref(`/groups/${ctl.config.group_name}`)
+      ctl.mainfirebase.database().ref(`/groups/${ctl.config.group_name}`)
     );
     ctl.group_obj.$bindTo($scope, "ctl.group");
     ctl.group_obj.$loaded(function(){
@@ -74,7 +74,7 @@ app.controller_config = function(ctl, $scope, $firebaseObject, $interval){
         console.log("Carico", k, `data/${k}`);
         if (k.match(/\$/)) continue;
         console.log("Carico", k, `data/${k}`);
-        firebase.database().ref(`/data/${k}`).once('value', function(snap){
+        ctl.mainfirebase.database().ref(`/data/${k}`).once('value', function(snap){
           var tmp = snap.val();
           if (tmp) ctl.elementi.push( tmp );
         });

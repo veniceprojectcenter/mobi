@@ -79,7 +79,7 @@ app.init_addObject = function(ctl,NavigatorGeolocation){
     if(error==1) return;
 
     alert("error code: "+error);
-    var fb = firebase.database();
+    var fb = ctl.mainfirebase.database();
     var new_obj={test : "dovrei essere sovrascritto"};
     var new_value;
 
@@ -175,7 +175,7 @@ app.init_addObject = function(ctl,NavigatorGeolocation){
   }
 
   ctl.uploadStorage = function(group_name,ckid,file){
-    var fileref = firebase.storage().ref();
+    var fileref = ctl.mainfirebase.storage().ref();
     var new_name = file.name;
     if(new_name.startsWith("image")){
       var temp_name = file.name.split(".");
