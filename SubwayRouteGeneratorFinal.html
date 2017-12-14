@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>VE17-MOVE Route Generator</title>
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      #floating-panel {
+        position: absolute;
+        top: 10px;
+        left: 15%;
+        z-index: 5;
+        background-color: #fff;
+        padding: 5px;
+        border: 1px solid #999;
+        text-align: center;
+        font-family: 'Roboto','sans-serif';
+        line-height: 30px;
+        padding-left: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="floating-panel">
+    <b>Start: </b>
+    <input type="text" id='start' value= 'Mestre, Venice, Italy'>
+    <b>End: </b>
+    <input type="text" id='end' value= 'Lido, Venice, Italy'>
+    </select>
+    <b>Subway: </b>
+    <select id="subway">
+      <option value="true">Yes</option>
+      <option value="false">No</option>
+    </select>
+    <b>Subway Type: </b>
+    <select id="subwayType">
+      <option value="Piazzale Roma - Lido">Piazzale Roma - Lido</option>
+      <option value="Mestre - Lido">Mestre - Lido</option>
+      <option value="Airport - Lido">Marco Polo Airport - Lido</option>
+    </select>
+    <b>Generate Route: </b>
+    <button id="run">Run</button>
+    <p id="duration"></p>
+    </div>
+    <div id="map"></div>
+    <script>
+      var dur1;
+      var dur2;
+      var route;
+      var duration;
+      var subwayTimeTable;
+      //Function called with Google Maps Directions Api Key
+      function initMap() {
+        //Variables used to call Google Maps functions and display routes
+        var directionsService = new google.maps.DirectionsService;
+        var directionsDisplay = new google.maps.DirectionsRenderer;
+        var directionsService2 = new google.maps.DirectionsService;
+        var directionsDisplay2 = new google.maps.DirectionsRenderer;
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 13,
+          center: {lat: 45.435156, lng: 12.333743}
+        });
+
+        directionsDisplay.setMap(map);
+        directionsDisplay2.setMap(map);
+
+        var onChangeHandler = async function() {
+            
+            //Remove routes if on map
+            if (typeof(route) != "undefined"){
+                route.setMap(null);
+            }
+
+            //Remove routes on map
+            directionsDisplay.setMap(null);
+            directionsDisplay2.setMap(null);
+            directionsDisplay = new google.maps.DirectionsRenderer;
+            directionsDisplay2 = new google.maps.DirectionsRenderer;
+            directionsDisplay.setMap(map);
+            directionsDisplay2.setMap(map);
+
+            //Calculate and display subway from Piazzale Roma to Lido
+            var subwayStatus;
+            var piazzaleLido;
+            if (document.getElementById('subway').value == "true" && document.getElementById('subwayType').value == "Piazzale Roma - Lido"){
+              subwayStatus = true
+              piazzaleLido = true
+
+            } else {
+              subwayStatus = false
+              piazzaleLido = false
+            }
+            if (subwayStatus && piazzaleLido) {
+              var stops =  ["45.43984,12.31784",
+                            "45.42668,12.32522",
+                            "45.42943,12.32658",
+                            "45.43395,12.34343",
+                            "45.4175,12.36857"];
+
+              var durStart = 1000000000000000000;
+              var durEnd = 1000000000000000000;
+              var stopStart;
+              var stopEnd;
+              var i;
+              for (i=0; i<stops.length; i++){
+                console.log('Iteration: ', i);
+                console.log('In loop: ', dur1);
+                dur1=0;
+                dur2=0;
+                await calculateDuration1(directionsService, directionsDisplay, document.getElementById('start').value, stops[i]);
+                await calculateDuration1(directionsService2, directionsDisplay2, stops[i], document.getElementById('end').value);
+                if (dur1 < durStart) {
+                  durStart = dur1;
+                  stopStart = stops[i];
+                }
+                if (dur2 < durEnd) {
+                  durEnd = dur2;
+                  stopEnd = stops[i];
+                }
+              }
+
+                
+              if (stopStart == "45.43984,12.31784"){
+                polyStart = 0;
+              }
+              if (stopStart == "45.42668,12.32522"){
+                polyStart = 3;
+              }
+              if (stopStart == "45.42943,12.32658"){
+                polyStart = 3;
+              }
+              if (stopStart == "45.43395,12.34343"){
+                polyStart = 5;
+              }
+              if (stopStart == "45.4175,12.36857"){
+                polyStart = 6;
+              }
+              if (stopEnd == "45.43984,12.31784"){
+                polyEnd = 0;
+              }
+              if (stopEnd == "45.42668,12.32522"){
+                polyEnd = 3;
+              }
+              if (stopEnd == "45.42943,12.32658"){
+                polyEnd = 3;
+              }
+              if (stopEnd == "45.43395,12.34343"){
+                polyEnd = 5;
+              }
+              if (stopEnd == "45.4175,12.36857"){
+                polyEnd = 6;
+              }
+
+              var arrCoords = [
+              new google.maps.LatLng(45.43984,12.31784),
+              new google.maps.LatLng(45.43953,12.31666),
+              new google.maps.LatLng(45.43122,12.30923),
+              new google.maps.LatLng(45.42806,12.3259),
+              new google.maps.LatLng(45.42849,12.33333),
+              new google.maps.LatLng(45.43262,12.34364),
+              new google.maps.LatLng(45.4175,12.36857)
+              ];
+
+
+              subwayTimeTable = [[0,0,0,318,0,456,624],
+                                 [0,0,0,0,0,0,0],
+                                 [0,0,0,0,0,0,0],
+                                 [318,0,0,0,0,366,534],
+                                 [0,0,0,0,0,0,0],
+                                 [456,0,0,366,0,0,342],
+                                 [624,0,0,534,0,342,0]];
+
+              if (polyStart < polyEnd){
+                arrCoords = arrCoords.slice(polyStart,polyEnd+1)
+                duration = durStart + durEnd + subwayTimeTable[polyStart][polyEnd]
+                duration = Math.round(duration/60*100)/100;
+                document.getElementById("duration").innerHTML = "Duration: " + duration.toString() +" mins";
+                arrCoords.unshift(new google.maps.LatLng(parseFloat(stopStart.split(',')[0]),parseFloat(stopStart.split(',')[1])));
+                arrCoords.push(new google.maps.LatLng(parseFloat(stopEnd.split(',')[0]),parseFloat(stopEnd.split(',')[1])));
+              }
+              else {
+                arrCoords = arrCoords.slice(polyEnd,polyStart+1)
+                duration = durStart + durEnd + subwayTimeTable[polyEnd][polyStart]
+                duration = Math.round(duration/60*100)/100;
+                document.getElementById("duration").innerHTML = "Duration: " + duration.toString() +" mins";
+                arrCoords.push(new google.maps.LatLng(parseFloat(stopStart.split(',')[0]),parseFloat(stopStart.split(',')[1])));
+                arrCoords.unshift(new google.maps.LatLng(parseFloat(stopEnd.split(',')[0]),parseFloat(stopEnd.split(',')[1])));
+              }
+                                      
+
+              route = new google.maps.Polyline({
+                  path: arrCoords,
+                  strokeColor: "#8000FF",
+                  strokeOpacity: 1.0,
+                  strokeWeight: 4,
+                  geodesic: false,
+                  map: map
+              });
+
+              //Display routes to get to subway
+              calculateAndDisplayRoute(directionsService, directionsDisplay, document.getElementById('start').value, stopStart);
+              calculateAndDisplayRoute(directionsService2, directionsDisplay2, stopEnd, document.getElementById('end').value);
+            }
+              
+            //Calculate and display subway from Mestre to Lido
+            var mestreLido;
+            if (document.getElementById('subway').value == "true" && document.getElementById('subwayType').value == "Mestre - Lido"){
+              subwayStatus = true;
+              mestreLido = true;
+
+            } else {
+              subwayStatus = false;
+              mestreLido = false;
+            }
+            if (subwayStatus && mestreLido) {
+              var stops =  ["45.493482,12.246329",
+                            "45.43984,12.31784",
+                            "45.42668,12.32522",
+                            "45.42943,12.32658",
+                            "45.43395,12.34343",
+                            "45.4175,12.36857"];
+
+              var durStart = 1000000000000000000;
+              var durEnd = 1000000000000000000;
+              var stopStart;
+              var stopEnd;
+              var i;
+              for (i=0; i<stops.length; i++){
+                console.log('Iteration: ', i);
+                console.log('In loop: ', dur1);
+                dur1=0;
+                dur2=0;
+                await calculateDuration1(directionsService, directionsDisplay, document.getElementById('start').value, stops[i]);
+                await calculateDuration1(directionsService2, directionsDisplay2, stops[i], document.getElementById('end').value);
+                if (dur1 < durStart) {
+                  durStart = dur1;
+                  stopStart = stops[i];
+                }
+                if (dur2 < durEnd) {
+                  durEnd = dur2;
+                  stopEnd = stops[i];
+                }
+              }
+
+                
+              
+              if (stopStart == "45.493482,12.246329"){
+                polyStart = 0;
+              }
+              if (stopStart == "45.43984,12.31784"){
+                polyStart = 4;
+              }
+              if (stopStart == "45.42668,12.32522"){
+                polyStart = 7;
+              }
+              if (stopStart == "45.42943,12.32658"){
+                polyStart = 7;
+              }
+              if (stopStart == "45.43395,12.34343"){
+                polyStart = 9;
+              }
+              if (stopStart == "45.4175,12.36857"){
+                polyStart = 10;
+              }
+              if (stopEnd == "45.493482,12.246329"){
+                polyEnd = 0;
+              }
+              if (stopEnd == "45.43984,12.31784"){
+                polyEnd = 4;
+              }
+              if (stopEnd == "45.42668,12.32522"){
+                polyEnd = 7;
+              }
+              if (stopEnd == "45.42943,12.32658"){
+                polyEnd = 7;
+              }
+              if (stopEnd == "45.43395,12.34343"){
+                polyEnd = 9;
+              }
+              if (stopEnd == "45.4175,12.36857"){
+                polyEnd = 10;
+              }
+
+              var arrCoords = [
+              new google.maps.LatLng(45.493482,12.246329),
+              new google.maps.LatLng(45.47274,12.27001),
+              new google.maps.LatLng(45.46973,12.26923),
+              new google.maps.LatLng(45.44507,12.31492),
+              new google.maps.LatLng(45.43984,12.31784),
+              new google.maps.LatLng(45.43953,12.31666),
+              new google.maps.LatLng(45.43122,12.30923),
+              new google.maps.LatLng(45.42806,12.3259),
+              new google.maps.LatLng(45.42849,12.33333),
+              new google.maps.LatLng(45.43262,12.34364),
+              new google.maps.LatLng(45.4175,12.36857)
+              ];
+
+
+              subwayTimeTable = [[0,0,0,0,360,0,0,684,0,816,990],
+                                 [0,0,0,0,0,0,0,0,0,0,0],
+                                 [0,0,0,0,0,0,0,0,0,0,0],
+                                 [0,0,0,0,0,0,0,0,0,0,0],
+                                 [360,0,0,0,0,0,0,318,0,456,624],
+                                 [0,0,0,0,0,0,0,0,0,0,0],
+                                 [0,0,0,0,0,0,0,0,0,0,0],
+                                 [684,0,0,0,318,0,0,0,0,366,534],
+                                 [0,0,0,0,0,0,0,0,0,0,0],
+                                 [816,0,0,0,456,0,0,366,0,0,342],
+                                 [990,0,0,0,624,0,0,534,0,342,0]];
+
+              if (polyStart < polyEnd){
+                arrCoords = arrCoords.slice(polyStart,polyEnd+1)
+                duration = durStart + durEnd + subwayTimeTable[polyStart][polyEnd]
+                duration = Math.round(duration/60*100)/100;
+                document.getElementById("duration").innerHTML = "Duration: " + duration.toString() +" mins";
+                arrCoords.unshift(new google.maps.LatLng(parseFloat(stopStart.split(',')[0]),parseFloat(stopStart.split(',')[1])));
+                arrCoords.push(new google.maps.LatLng(parseFloat(stopEnd.split(',')[0]),parseFloat(stopEnd.split(',')[1])));
+
+              }
+              else {
+                arrCoords = arrCoords.slice(polyEnd,polyStart+1)
+                duration = durStart + durEnd + subwayTimeTable[polyEnd][polyStart]
+                duration = Math.round(duration/60*100)/100;
+                document.getElementById("duration").innerHTML = "Duration: " + duration.toString() +" mins";
+                arrCoords.push(new google.maps.LatLng(parseFloat(stopStart.split(',')[0]),parseFloat(stopStart.split(',')[1])));
+                arrCoords.unshift(new google.maps.LatLng(parseFloat(stopEnd.split(',')[0]),parseFloat(stopEnd.split(',')[1])));
+
+              }
+                                      
+              route = new google.maps.Polyline({
+                  path: arrCoords,
+                  strokeColor: "#8000FF",
+                  strokeOpacity: 1.0,
+                  strokeWeight: 4,
+                  geodesic: false,
+                  map: map
+              });
+
+              //Display routes to get to subway
+              calculateAndDisplayRoute(directionsService, directionsDisplay, document.getElementById('start').value, stopStart);
+              calculateAndDisplayRoute(directionsService2, directionsDisplay2, stopEnd, document.getElementById('end').value);
+            }
+              
+            //Calculate and display subway from Marco Polo Airport to Lido
+            var airportLido;
+            if (document.getElementById('subway').value == "true" && document.getElementById('subwayType').value == "Airport - Lido"){
+              subwayStatus = true;
+              airportLido = true;
+
+            } else {
+              subwayStatus = false;
+              airportLido = false;
+            }
+            if (subwayStatus && airportLido) {
+              var stops =  ["45.50075, 12.33721",
+                            "45.43984,12.31784",
+                            "45.42668,12.32522",
+                            "45.42943,12.32658",
+                            "45.43395,12.34343",
+                            "45.4175,12.36857"];
+
+              var durStart = 1000000000000000000;
+              var durEnd = 1000000000000000000;
+              var stopStart;
+              var stopEnd;
+              var i;
+              for (i=0; i<stops.length; i++){
+                console.log('Iteration: ', i);
+                console.log('In loop: ', dur1);
+                dur1=0;
+                dur2=0;
+                await calculateDuration1(directionsService, directionsDisplay, document.getElementById('start').value, stops[i]);
+                await calculateDuration1(directionsService2, directionsDisplay2, stops[i], document.getElementById('end').value);
+                if (dur1 < durStart) {
+                  durStart = dur1;
+                  stopStart = stops[i];
+                }
+                if (dur2 < durEnd) {
+                  durEnd = dur2;
+                  stopEnd = stops[i];
+                }
+              }
+
+                
+              
+              if (stopStart == "45.50075, 12.33721"){
+                polyStart = 0;
+              }
+              if (stopStart == "45.43984,12.31784"){
+                polyStart = 4;
+              }
+              if (stopStart == "45.42668,12.32522"){
+                polyStart = 7;
+              }
+              if (stopStart == "45.42943,12.32658"){
+                polyStart = 7;
+              }
+              if (stopStart == "45.43395,12.34343"){
+                polyStart = 9;
+              }
+              if (stopStart == "45.4175,12.36857"){
+                polyStart = 10;
+              }
+              if (stopEnd == "45.50075, 12.33721"){
+                polyEnd = 0;
+              }
+              if (stopEnd == "45.43984,12.31784"){
+                polyEnd = 4;
+              }
+              if (stopEnd == "45.42668,12.32522"){
+                polyEnd = 7;
+              }
+              if (stopEnd == "45.42943,12.32658"){
+                polyEnd = 7;
+              }
+              if (stopEnd == "45.43395,12.34343"){
+                polyEnd = 9;
+              }
+              if (stopEnd == "45.4175,12.36857"){
+                polyEnd = 10;
+              }
+
+              var arrCoords = [
+              new google.maps.LatLng(45.50075,12.33721),
+              new google.maps.LatLng(45.49046,12.3282),
+              new google.maps.LatLng(45.4836,12.33284),
+              new google.maps.LatLng(45.44399,12.31515),
+              new google.maps.LatLng(45.43984,12.31784),
+              new google.maps.LatLng(45.43953,12.31666),
+              new google.maps.LatLng(45.43122,12.30923),
+              new google.maps.LatLng(45.42806,12.3259),
+              new google.maps.LatLng(45.42849,12.33333),
+              new google.maps.LatLng(45.43262,12.34364),
+              new google.maps.LatLng(45.4175,12.36857)
+              ];
+
+
+              subwayTimeTable = [[0,0,0,0,318,0,0,636,0,774,948],
+                                 [0,0,0,0,0,0,0,0,0,0,0],
+                                 [0,0,0,0,0,0,0,0,0,0,0],
+                                 [0,0,0,0,0,0,0,0,0,0,0],
+                                 [318,0,0,0,0,0,0,318,0,456,624],
+                                 [0,0,0,0,0,0,0,0,0,0,0],
+                                 [0,0,0,0,0,0,0,0,0,0,0],
+                                 [636,0,0,0,318,0,0,0,0,366,534],
+                                 [0,0,0,0,0,0,0,0,0,0,0],
+                                 [774,0,0,0,456,0,0,366,0,0,342],
+                                 [948,0,0,0,624,0,0,534,0,342,0]];
+
+              if (polyStart < polyEnd){
+                arrCoords = arrCoords.slice(polyStart,polyEnd+1)
+                duration = durStart + durEnd + subwayTimeTable[polyStart][polyEnd]
+                duration = Math.round(duration/60*100)/100;
+                document.getElementById("duration").innerHTML = "Duration: " + duration.toString() +" mins";
+                arrCoords.unshift(new google.maps.LatLng(parseFloat(stopStart.split(',')[0]),parseFloat(stopStart.split(',')[1])));
+                arrCoords.push(new google.maps.LatLng(parseFloat(stopEnd.split(',')[0]),parseFloat(stopEnd.split(',')[1])));
+
+              }
+              else {
+                arrCoords = arrCoords.slice(polyEnd,polyStart+1)
+                duration = durStart + durEnd + subwayTimeTable[polyEnd][polyStart]
+                duration = Math.round(duration/60*100)/100;
+                document.getElementById("duration").innerHTML = "Duration: " + duration.toString() +" mins";
+                arrCoords.push(new google.maps.LatLng(parseFloat(stopStart.split(',')[0]),parseFloat(stopStart.split(',')[1])));
+                arrCoords.unshift(new google.maps.LatLng(parseFloat(stopEnd.split(',')[0]),parseFloat(stopEnd.split(',')[1])));
+
+              }
+                                      
+              route = new google.maps.Polyline({
+                  path: arrCoords,
+                  strokeColor: "#8000FF",
+                  strokeOpacity: 1.0,
+                  strokeWeight: 4,
+                  geodesic: false,
+                  map: map
+              });
+
+              //Display routes to get to subway
+              calculateAndDisplayRoute(directionsService, directionsDisplay, document.getElementById('start').value, stopStart);
+              calculateAndDisplayRoute(directionsService2, directionsDisplay2, stopEnd, document.getElementById('end').value);
+            }
+
+
+              //Display only normal google maps route and duration if Subway option is set to 'no'
+              if(document.getElementById('subway').value == "false"){
+              await calculateDuration1(directionsService, directionsDisplay, document.getElementById('start').value, document.getElementById('end').value);
+              duration = dur1
+              duration = Math.round(duration/60*100)/100
+              document.getElementById("duration").innerHTML = "Duration: " + duration.toString() +" mins";
+              calculateAndDisplayRoute(directionsService, directionsDisplay, document.getElementById('start').value, document.getElementById('end').value);
+            }
+        };
+        document.getElementById('run').addEventListener("click", onChangeHandler);
+      }
+
+      //calculates the duration betwen two points using google transit feeds
+      async function calculateDuration1(directionsService, directionsDisplay, origin, destination) {
+        var promise = new Promise(function (resolve) {
+          directionsService.route({
+            origin: origin,
+            destination: destination,
+            travelMode: 'TRANSIT'
+          }, function(response, status) {
+            if (status === 'OK') {
+              resolve(response);
+            } else {
+              window.alert('Directions request failed due to ' + status);
+            }
+          });
+        });
+
+        await promise.then(function (response) {
+          if (origin == document.getElementById('start').value){
+            dur1 = response.routes[0].legs[0].duration.value;
+            console.log('Response: ', dur1);
+          } else {
+            dur2 = response.routes[0].legs[0].duration.value;
+          }
+        });
+        
+      }
+
+      //Displays the route between two points on map
+      function calculateAndDisplayRoute(directionsService, directionsDisplay, origin, destination) {
+        directionsService.route({
+          origin: origin,
+          destination: destination,
+          travelMode: 'TRANSIT'
+        }, function(response, status) {
+          if (status === 'OK') {
+            directionsDisplay.setDirections(response);
+          } else {
+            window.alert('Directions request failed due to ' + status);
+            alert(origin)
+          }
+        });
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAm5_UDLY-2Fd5wrLkT5I5VYDQ7mzDKxuA&callback=initMap">
+    </script>
+  </body>
+</html>
